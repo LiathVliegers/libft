@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 18:51:01 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/25 20:11:26 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:35:32 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dst_len;
 	size_t	src_len;
 
+	if (dst == NULL || src == NULL)
+		return (NULL);
 	i = 0;
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);

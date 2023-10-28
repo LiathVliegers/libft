@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 18:50:40 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/25 19:41:32 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:19:41 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	ft_atoi(const char *nptr)
 
 	sign = 1;
 	numbr = 0;
+	if (nptr == NULL)
+		return (NULL);
 	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')

@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 19:09:46 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/25 20:14:04 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:32:28 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	i = 0;
 	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{

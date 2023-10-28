@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 19:09:33 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/25 21:07:28 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:45:57 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 	char	*str;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	str = (char *)malloc((sizeof(char) * (ft_strlen(s1) + ft_strlen(s2))) + 1);
 	if (str == NULL)
 		return (NULL);

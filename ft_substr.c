@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 19:09:55 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/25 22:28:23 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:33:52 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	i;
 	char			*str;
 
+	if (s == NULL)
+		return (NULL);
 	if (len == 0 || ft_strlen(s) < start)
 		return (ft_strdup(""));
 	if (start + len > ft_strlen(s))

@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 20:31:06 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/25 20:08:54 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:45:49 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ RETURN VALUE
 char	*ft_strdup(const char *s)
 {
 	int		i;
-	int		len;
 	char	*str;
 
-	len = ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * len + 1);
+	if (s == NULL)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (str == NULL)
 		return (NULL);
 	i = 0;

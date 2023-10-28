@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 18:51:06 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/25 20:12:40 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:34:49 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
+	if (dst == NULL || src == NULL)
+		retrun (NULL);
 	i = 0;
 	while (i < size && src[i] != '\0')
 	{

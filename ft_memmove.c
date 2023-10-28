@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:36:17 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/25 19:59:33 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:40:33 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char			*dest1;
 	const char		*src1;
 
+	if (dest == NULL || src == NULL)
+		return (NULL);
 	dest1 = (char *)dest;
 	src1 = (const char *)src;
-	if (dest == NULL && src == NULL)
-		return (NULL);
 	if (src == dest || n == 0)
 		return (dest);
 	i = 0;

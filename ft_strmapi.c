@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 15:32:52 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/25 19:34:21 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:12:37 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*f_str;
 
 	i = 0;
+	if (s == NULL || f == NULL)
+		return (NULL);
 	len = ft_strlen(s);
 	f_str = ft_strdup(s);
 	while (i < len)

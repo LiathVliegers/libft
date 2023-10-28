@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 20:07:21 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/25 20:07:43 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:37:12 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,11 @@ RETURN VALUE
 char	*ft_strchr(const char *s, int c)
 {
 	size_t			i;
-	size_t			len;
 	unsigned char	ch;
 
 	ch = c;
 	i = 0;
-	len = ft_strlen(s);
-	while (i < len)
+	while (i < ft_strlen(s))
 	{
 		if (s[i] == ch)
 			return ((char *)&s[i]);

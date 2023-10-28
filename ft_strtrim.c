@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 18:14:54 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/25 20:16:38 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:23:41 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		len;
 	char	*trimmed_str;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	i = 0;
 	j = ft_strlen(s1);
 	while (ft_strchr(set, s1[i]))
