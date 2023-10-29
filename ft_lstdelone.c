@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 16:22:36 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/28 19:15:10 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/29 17:37:07 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,28 @@ Description 		Takes as a parameter a node and frees the memory of
 					as a parameter and free the node. The memory of
 					’next’ must not be freed.
 */
-					
+
 #include "libft.h"
 
-void ft_lstdelone(t_list *head, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
+	if (lst == NULL || del == NULL)
+		return ;
+	del(lst->content);
+	free(lst);
 }
 
 // ft_lstdelone(head, &free);	this is for testing purposes
+
+/*In this function we are taking in, as a parameter, the address of a pointer 
+ * on a link and freeing the memory content of the link with the function 'del'
+ * that has been passed as a parameter as well in order to free the memory of 
+ * the link. The memory of the element next should never be freed. In order to
+ * terminate the link, the pointer on the current link should be put to NULL.*/
+
+/*First we check to make sure that the parameters that were passed into our
+ * function are not NULL. If they are not we then run our parameter passed
+ * function del by giving it's parameters our link alst's content and
+ * content_size. Once the function has deleted alst's content we the free
+ * the memory that was allocated to alst and then set it to NULL. Thus
+ * deleting on link in our list.*/

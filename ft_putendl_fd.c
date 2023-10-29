@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 17:39:17 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/28 18:38:17 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/29 15:57:38 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ Description 		Outputs the string ’s’ to the given file descriptor
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (s == NULL)
-		return (NULL);
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }

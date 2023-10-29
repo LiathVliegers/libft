@@ -37,20 +37,48 @@ SRC = \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
 
+BONUS_SRC = \
+	ft_lstadd_back.c \
+	ft_lstadd_front.c \
+	ft_lstclear.c \
+	ft_lstdelone.c \
+	ft_lstiter.c \
+	ft_lstmap.c \
+	ft_lstnew.c \
+	ft_lstsize.c \
+	ft_lstlast.c \
+
+
+
 OBJS = $(SRC:.c=.o)
+BONUS_OBJS = $(BONUS_SRC:.c=.o)
+
+ifdef BONUS
+	SRC += $(BONUS_SRCS)
+endif
 
 all: $(NAME)
 
+ifndef BONUS
 $(NAME): $(OBJS)
-	ar rcs $@ $^
+	ar rcs $(NAME) $(OBJS)
+endif
+
+ifdef BONUS
+$(NAME): $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+endif
 
 clean:
 	@echo "Removing all .o files."
 	@-rm -f *.o
 
 fclean: clean
-	-rm $(NAME)
+	-rm -f $(NAME)
 
 re: fclean all
+
+bonus:
+	$(MAKE) BONUS=1 all
 
 .PHONY: all clean fclean re

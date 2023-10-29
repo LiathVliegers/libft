@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 19:09:40 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/28 18:34:19 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/29 16:03:16 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,8 @@ size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
-	if (str == NULL)
-		return (NULL);
 	i = 0;
 	while (str[i] != '\0')
-	{
 		i++;
-	}
 	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 20:07:31 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/28 18:23:10 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/29 16:03:39 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,16 @@ char	*ft_strrchr(const char *s, int c)
 	int				len;
 	unsigned char	ch;
 
-	if (s == NULL || c == NULL)
+	if (s == NULL)
 		return (NULL);
-	ch = c;
 	len = ft_strlen(s);
+	ch = (unsigned char)c;
+	if (ch == 0)
+		return ((char *)s + len);
 	while (len >= 0)
 	{
 		if (s[len] == ch)
-			return ((char *)&s[len]);
+			return ((char *)s + len);
 		len--;
 	}
 	return (NULL);

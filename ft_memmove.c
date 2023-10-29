@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:36:17 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/28 18:40:33 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/29 15:57:14 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@ DESCRIPTION
        The  memmove() function copies n bytes from memory area src 
 	   to memory area dest.  
        The memory areas may overlap: copying takes place as though the 
-	   bytes in src are 
-       first copied into a temporary array that does not overlap src or dest, 
-       and the bytes are then  copied  from the temporary array to dest.
+	   bytes in src are first copied into a temporary array that does not 
+	   overlap src or dest, and the bytes are then  copied  from the temporary 
+	   array to dest.
 
 RETURN VALUE
        The memmove() function returns a pointer to dest.
@@ -27,30 +27,16 @@ RETURN VALUE
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t			i;
-	char			*dest1;
-	const char		*src1;
+	char	*temp;
 
 	if (dest == NULL || src == NULL)
 		return (NULL);
-	dest1 = (char *)dest;
-	src1 = (const char *)src;
-	if (src == dest || n == 0)
-		return (dest);
-	i = 0;
-	while (i < n && dest != src)
-	{
-		if (dest1 < src1)
-		{
-			dest1[i] = src1[i];
-			i++;
-		}
-		if (dest1 > src1)
-		{
-			i++;
-			dest1[n - i] = src1[n - i];
-		}
-	}
+	temp = (char *)malloc(sizeof(char) * n);
+	if (temp == NULL)
+		return (NULL);
+	ft_memcpy(temp, src, n);
+	ft_memcpy(dest, temp, n);
+	free(temp);
 	return (dest);
 }
 

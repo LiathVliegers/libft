@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 15:32:52 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/28 18:12:37 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/29 14:29:47 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,19 @@ Description 		Applies the function ’f’ to each character of the
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t			len;
 	unsigned int	i;
-	char			*f_str;
+	char			*str;
 
-	i = 0;
 	if (s == NULL || f == NULL)
 		return (NULL);
-	len = ft_strlen(s);
-	f_str = ft_strdup(s);
-	while (i < len)
+	i = 0;
+	str = ft_strdup(s);
+	while (str[i] != '\0')
 	{
-		f_str[i] = (*f)(i, f_str[i]);
+		str[i] = f(i, str[i]);
 		i++;
 	}
-	return (f_str);
+	return (str);
 }
 
 // char ft_touppercase (unsigned int i, char c)

@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:02:11 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/28 18:39:34 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/29 15:57:27 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ RETURN VALUE
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
+	char	*str;
 
-	if (s == NULL || c == NULL)
+	if (s == NULL)
 		return (NULL);
-	i = 0;
-	while (i < n)
+	str = (char *)s;
+	while (n != 0)
 	{
-		*(unsigned char *)(s + i) = c;
-		i++;
+		str[n - 1] = c;
+		n--;
 	}
 	return (s);
 }

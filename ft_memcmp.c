@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:36:20 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/28 18:45:29 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/29 16:01:44 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	const unsigned char	*str1;
 	const unsigned char	*str2;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
 	str1 = (const unsigned char *)s1;
 	str2 = (const unsigned char *)s2;
 	i = 0;

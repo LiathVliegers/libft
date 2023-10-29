@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 20:31:06 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/28 18:45:49 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/29 12:45:37 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ char	*ft_strdup(const char *s)
 
 	if (s == NULL)
 		return (NULL);
+	i = 0;
 	str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (str == NULL)
 		return (NULL);
-	i = 0;
 	while (s[i] != '\0')
 	{
 		str[i] = s[i];

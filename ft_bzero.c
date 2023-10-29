@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:23:22 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/28 18:31:56 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/29 15:56:21 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,7 @@ RETURN VALUE
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*s1;
-
-	if (s == NULL)
-		return (NULL);
-	i = 0;
-	s1 = (char *)s;
-	while (i < n)
-	{
-		s1[i] = 0;
-		i++;
-	}
+	ft_memset(s, 0, n);
 }
 
 // void	ft_bzero(void *s, size_t n)

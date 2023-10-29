@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:29:13 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/28 18:29:22 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/29 16:01:11 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Description         Allocates (with malloc(3)) and returns an array
 
 #include "libft.h"
 
-int	ft_free(char **split_2d_array)
+void	*ft_free(char **split_2d_array)
 {
 	while (*split_2d_array != NULL)
 	{
@@ -81,8 +81,6 @@ char	**ft_split(char const *s, char c)
 	int		new_word;
 	char	**split_2d_array;
 
-	if (s == NULL || c == NULL)
-		return (NULL);
 	i = SIZE_MAX;
 	j = 0;
 	new_word = -1;
@@ -105,7 +103,7 @@ char	**ft_split(char const *s, char c)
 // #include <stdio.h>
 // int main(void)
 // {
-// 	char str[] = "This   string is about to be split into small sections      ";
+// 	char str[] = "  This  string is about to be split into small sections   ";
 // 	char delimiter = ' ';
 
 // 	// printf("%zu\n", word_count(str, delimiter));

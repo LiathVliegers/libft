@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 16:22:44 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/28 19:17:26 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/29 17:33:29 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,31 @@ Description 		Counts the number of nodes in a list.
 
 #include "libft.h"
 
-// CHANGE HEAD BACK TO lst!!!!!!!!!!!!!!!
-int	ft_lstsize(t_list *head)
+int	ft_lstsize(t_list *lst)
 {
-	int		size;
-	t_list	*count;
+	int	count;
 
-	if (head == NULL)
-		return (NULL);
-	count = head;
-	size = 0;
-	while (count->next != NULL)
+	count = 0;
+	while (lst)
 	{
-		count = count->next;
-		size++;
+		count++;
+		lst = lst->next;
 	}
-	return (size);
+	return (count);
 }
+// CHANGE HEAD BACK TO lst!!!!!!!!!!!!!!!
+// int	ft_lstsize(t_list *lst)
+// {
+// 	int		count;
+
+// 	// if (head == NULL)
+// 	// 	return ;
+// 	count = 0;
+// 	// size = 0;
+// 	while (lst)
+// 	{
+// 		lst = lst->next;
+// 		count++;
+// 	}
+// 	return (count);
+// }

@@ -6,9 +6,23 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 19:09:18 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/25 20:19:05 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/29 10:49:47 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+DESCRIPTION
+       These  functions  check  whether c, which must have the value of an un‐
+       signed char or EOF, falls into a certain character class  according  to
+       the  specified  locale.
+
+isdigit()
+        checks for a digit (0 through 9).
+
+RETURN VALUE
+       The  values  returned  are  nonzero  if  the character c falls into the
+       tested class, and zero if not.
+*/
 
 #include "libft.h"
 

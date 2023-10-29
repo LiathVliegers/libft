@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:46:16 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/26 12:19:34 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/29 10:53:53 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ Description 		Allocates (with malloc(3)) and returns a string
 
 char	*converter(int n, char *str, size_t n_len)
 {
-	int		i;
 	long	num;
 
 	num = n;
@@ -36,14 +35,13 @@ char	*converter(int n, char *str, size_t n_len)
 		num *= -1;
 		str[0] = '-';
 	}
-	i = n_len;
-	str[i] = '\0';
-	i -= 1;
+	str[n_len] = '\0';
+	n_len -= 1;
 	while (num != 0)
 	{
-		str[i] = (num % 10 + '0');
+		str[n_len] = (num % 10 + '0');
 		num /= 10;
-		i--;
+		n_len--;
 	}
 	return (str);
 }
