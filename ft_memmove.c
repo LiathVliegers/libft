@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:36:17 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/29 15:57:14 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/30 12:17:24 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,18 @@ DESCRIPTION
 	   bytes in src are first copied into a temporary array that does not 
 	   overlap src or dest, and the bytes are then  copied  from the temporary 
 	   array to dest.
+	   
+if dest is "bigger" that src:	->		if (dest1 > src1 && dest1 - src1 < n)
+		|| to overlaps with from 						||
+		||  <from......>         						||
+		||         <to........>  						||
+		|| copy in reverse, to avoid overwriting from 	||
+		
+if src is "bigger" that dest:	->  	if (src1 > dest1 && src1 - dest1 < n)
+		|| to overlaps with from 						||
+		||        <from......>   						||
+		||  <to........>         						||
+		|| copy forwards, to avoid overwriting from 	||
 
 RETURN VALUE
        The memmove() function returns a pointer to dest.
@@ -27,40 +39,52 @@ RETURN VALUE
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*temp;
+	unsigned char	*dest1;
+	unsigned char	*src1;
+	size_t			i;
 
-	if (dest == NULL || src == NULL)
-		return (NULL);
-	temp = (char *)malloc(sizeof(char) * n);
-	if (temp == NULL)
-		return (NULL);
-	ft_memcpy(temp, src, n);
-	ft_memcpy(dest, temp, n);
-	free(temp);
-	return (dest);
+	dest1 = (unsigned char *)dest;
+	src1 = (unsigned char *)src;
+	if (dest1 == src1 || n == 0)
+		return (dest);
+	if (dest1 > src1 && dest1 - src1 < (int)n)
+	{
+		i = n;
+		while (i > 0)
+		{
+			dest1[i - 1] = src1[i - 1];
+			i--;
+		}
+		return (dest);
+	}
+	else
+	{
+		ft_memcpy(dest, src, n);
+		return (dest);
+	}
 }
 
 // #include <stdio.h>
 
 // int main()
 // {
-// 	char array[] = "I love chocolate!";
+// 	char src[] = "I love chocolate!";
 // 	char dest[50] = "Hellloooooow ";
 
-// 	char array1[] = "I love chocolate!";
+// 	char src1[] = "I love chocolate!";
 // 	char dest1[50] = "Hellloooooow ";
 
-// 	printf("ft_memmove: %s\n", (char *)ft_memmove(dest + 13, array, 18));
-// 	printf("memmove: %s\n", (char *)memmove(dest1 + 13, array1, 18));
+// 	printf("ft_memmove: %s\n", (char *)ft_memmove(dest + 13, src, 18));
+// 	printf("memmove: %s\n", (char *)memmove(dest1 + 13, src1, 18));
 
-// 	char array2[] = "I love chocolate!";
+// 	char src2[] = "I love chocolate!";
 // 	char dest2[50] = "Hellloooooow ";
 
-// 	char array3[] = "I love chocolate!";
+// 	char src3[] = "I love chocolate!";
 // 	char dest3[50] = "Hellloooooow ";
 
-// 	ft_memmove(dest2 + 13, array2, 18);
-// 	memmove(dest3 + 13, array3, 18);
+// 	ft_memmove(dest2 + 13, src2, 18);
+// 	memmove(dest3 + 13, src3, 18);
 
 // 	printf("ft_memmove: %s\n", dest2);
 // 	printf("memmove: %s\n", dest3);

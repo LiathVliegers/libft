@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 20:07:21 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/29 14:53:55 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/30 12:03:26 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ char	*ft_strchr(const char *s, int c)
 	size_t			i;
 	unsigned char	ch;
 
-	if (s == NULL)
-		return (NULL);
 	ch = (unsigned char)c;
 	i = 0;
 	while (s[i] != '\0')

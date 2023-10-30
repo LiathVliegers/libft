@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 16:22:43 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/28 19:14:24 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/30 12:07:08 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
 
-	if (content == NULL)
-		return (NULL);
 	new_node = (t_list *)malloc(sizeof(t_list));
 	if (new_node == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:02:11 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/29 15:57:27 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:10:52 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	*ft_memset(void *s, int c, size_t n)
 {
 	char	*str;
 
-	if (s == NULL)
-		return (NULL);
 	str = (char *)s;
 	while (n != 0)
 	{

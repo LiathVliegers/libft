@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 20:05:18 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/28 18:32:36 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/30 12:04:08 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (big == NULL || little == NULL)
+	if (big == NULL && little == NULL)
 		return (NULL);
 	if (little[0] == '\0')
 		return ((char *)big);

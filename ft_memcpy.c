@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:20:28 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/29 15:57:03 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:15:42 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char		*dst_p;
 	const unsigned char	*src_p;
 
-	if (!dst || !src)
-		return (dst);
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	i = 0;
 	dst_p = (unsigned char *)dst;
 	src_p = (const unsigned char *)src;

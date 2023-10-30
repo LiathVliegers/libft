@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:29:13 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/29 16:01:11 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:08:35 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	new_word = -1;
 	split_2d_array = ft_split_size(s, c);
+	if (split_2d_array == NULL)
+		return (NULL);
 	while (++i <= ft_strlen(s))
 	{
 		if (s[i] != c && new_word < 0)
@@ -94,7 +96,7 @@ char	**ft_split(char const *s, char c)
 			split_2d_array[j] = ft_substr(s, new_word, (i - new_word));
 			new_word = -1;
 			if (!split_2d_array[j++])
-				ft_free(split_2d_array);
+				return (ft_free(split_2d_array));
 		}
 	}
 	return (split_2d_array);
