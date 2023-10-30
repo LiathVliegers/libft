@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:29:13 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/30 11:08:35 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/30 18:15:42 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,13 @@ Description         Allocates (with malloc(3)) and returns an array
 
 void	*ft_free(char **split_2d_array)
 {
-	while (*split_2d_array != NULL)
+	size_t	i;
+
+	i = 0;
+	while (split_2d_array[i] != NULL)
 	{
-		free(*split_2d_array);
-		split_2d_array++;
+		free(split_2d_array[i]);
+		i++;
 	}
 	free(split_2d_array);
 	return (NULL);

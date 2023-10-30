@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 18:51:01 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/29 16:06:01 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/30 12:28:07 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	if (i != size)
 		dst[i + j] = '\0';
-	return (i + strlen(src));
+	return (i + ft_strlen(src));
 }
 
 // OLD VERSION:

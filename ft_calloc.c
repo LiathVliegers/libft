@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:03:02 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/29 15:56:26 by livliege         ###   ########.fr       */
+/*   Updated: 2023/10/30 13:06:36 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,13 @@ The free() function returns no value.
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*alloc;
+	void	*ptr;
 
-	if (nmemb == 0 || size == 0)
-	{
-		alloc = malloc(1);
-		ft_bzero(alloc, 1);
-		return (alloc);
-	}
-	if ((UINT_MAX / nmemb) < size)
+	if (size != 0 && (nmemb * size) / size != nmemb)
 		return (NULL);
-	alloc = malloc(nmemb * size);
-	if (alloc == NULL)
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
 		return (NULL);
-	ft_bzero(alloc, (nmemb * size));
-	return (alloc);
+	ft_bzero(ptr, (nmemb * size));
+	return (ptr);
 }
