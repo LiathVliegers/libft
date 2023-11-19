@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 18:50:51 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/29 10:49:26 by livliege         ###   ########.fr       */
+/*   Updated: 2023/11/03 12:40:57 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,4 @@ int	ft_isalnum(int c)
 	else
 		return (0);
 }
+// ft_isdigit + ft_isalpha

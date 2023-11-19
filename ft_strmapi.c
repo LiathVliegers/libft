@@ -6,7 +6,7 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 15:32:52 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/30 12:05:35 by livliege         ###   ########.fr       */
+/*   Updated: 2023/11/03 19:03:59 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		i++;
 	}
 	return (str);
+	// ft_striteri
 }
 
 // char ft_touppercase (unsigned int i, char c)
