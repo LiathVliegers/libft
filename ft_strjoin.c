@@ -6,12 +6,12 @@
 /*   By: livliege <livliege@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 19:09:33 by livliege          #+#    #+#             */
-/*   Updated: 2023/10/29 12:48:17 by livliege         ###   ########.fr       */
+/*   Updated: 2023/11/27 17:20:51 by livliege         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-Function name       ft_strjoinS
+Function name       ft_strjoin
 Prototype           char *ft_strjoin(char const *s1, char const *s2);
 Turn in files       -
 Parameters 			s1: The prefix string.
